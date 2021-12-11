@@ -37,19 +37,19 @@ int main(void) {
 
 int main(void) {
 
-	int *x, *y;
+    int *x, *y;
 	
-	x = malloc(sizeof(int) * 10); //int형 [10]크기의 메모리 할당. 메모리 값은 쓰레기값. x가 int형 포인터이므로 알아서 배열처럼 메모리 공간이 나뉨.
+    x = malloc(sizeof(int) * 10); //int형 [10]크기의 메모리 할당. 메모리 값은 쓰레기값. x가 int형 포인터이므로 알아서 배열처럼 메모리 공간이 나뉨.
 	
-	y = calloc(10, sizeof(int)); //int형 [10]크기의 메모리 할당. 메모리 값은 0으로 초기화.
+    y = calloc(10, sizeof(int)); //int형 [10]크기의 메모리 할당. 메모리 값은 0으로 초기화.
 	
-	printf("%p %p\n", x, &x[0]); //확보한 메모리의 첫번째 주소 반환. 0x55abadb26260
-	printf("%p\n", x+1); //0x558bde0e5264
+    printf("%p %p\n", x, &x[0]); //확보한 메모리의 첫번째 주소 반환. 0x55abadb26260
+    printf("%p\n", x+1); //0x558bde0e5264
 	
-	//‘%p’ expects argument of type ‘void *’ ??
+    //‘%p’ expects argument of type ‘void *’ ??
 
-	printf("%d\n", x[0]); //쓰레기 값
-	printf("%d\n", y[0]); //0 반환
+    printf("%d\n", x[0]); //쓰레기 값
+    printf("%d\n", y[0]); //0 반환
 	
     free(x);
     free(y); //메모리 할당 
