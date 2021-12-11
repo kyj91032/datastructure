@@ -46,7 +46,7 @@ int main(void) {
     printf("%p %p\n", x, &x[0]); //확보한 메모리의 첫번째 주소 반환. 0x55abadb26260
     printf("%p\n", x+1); //0x558bde0e5264
 	
-    //‘%p’ expects argument of type ‘void *’ ??
+    //‘%p’ expects argument of type ‘void *’ ?? (void*)로 캐스팅 하면 됨.
 
     printf("%d\n", x[0]); //쓰레기 값
     printf("%d\n", y[0]); //0 반환
