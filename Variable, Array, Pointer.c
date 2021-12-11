@@ -52,7 +52,7 @@ int main(void) {
     printf("%d\n", y[0]); //0 반환
 	
     free(x);
-    free(y); //메모리 할당 
+    free(y); //메모리 할당 해제
 	
     return 0;
 }
