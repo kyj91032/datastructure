@@ -7,7 +7,7 @@ int main(void) {
     int n = 10; //변수의 선언.
     double d = 3.141592;
     printf("%d\n", n);
-    printf("%f", d); //변수를 이용해 메모리 주소를 기억하지 않아도 쉽게 호출할 수 있다.
+    printf("%f", d); //변수를 이용해 메모리 주소를 기억하지 않아도 메모리 데이터를 쉽게 호출할 수 있다.
     
     int a[5]; //배열의 선언.
     int na = sizeof(a) / sizeof(a[0]); //요소의 개수.
