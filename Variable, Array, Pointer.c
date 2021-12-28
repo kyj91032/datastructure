@@ -38,7 +38,7 @@ int main(void) {
 
     int *x, *y;
 	
-    x = malloc(sizeof(int) * 10); //int형 [10]크기의 메모리 할당. 메모리 값은 쓰레기값. x가 int형 포인터이므로 알아서 배열처럼 메모리 공간이 나뉨.
+    x = malloc(sizeof(int) * 10); //int형 [10]크기의 메모리 할당. 메모리 값은 쓰레기값. x가 int형 포인터이므로 알아서 배열처럼 메모리 공간이 나뉘며 x는 첫 4byte 공간을 가르킨다.
 	
     y = calloc(10, sizeof(int)); //int형 [10]크기의 메모리 할당. 메모리 값은 0으로 초기화.
 	
