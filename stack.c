@@ -23,9 +23,12 @@ print(stack) # 최하단 데이터부터 출력.
 
 typedef struct {
 	int max; //스택의 용량
-	int ptr; //스택 커서, 데이터의 개수
 	int *stk; //스택 배열(동적 메모리)
-} intstack; // typedef로 정한 익명 구조체의 별칭
+	//불변
+	
+	int ptr; //스택 커서 (요소를 추가하고 진행시켜 놓는, 진행시키고 요소를 삭제하는), 현재 요소의 개수
+	//가변
+} intstack;
 
 int initialize(intstack *s, int max) //스택 초기화
 {
