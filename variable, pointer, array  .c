@@ -56,3 +56,27 @@ int main(void) {
     return 0;
 }
 
+
+// 함수 포인터
+
+double func(int a); //int형 인수를 받고 double형 값을 반환하는 func라는 이름의 함수 선언.
+
+double(*func_p)(int a); //int형 인수를 받고 double형 값을 반환하는 함수를 가르킬 수 있는 포인터 함수 func_p 선언.
+
+func_p = func; //포인터 함수 func_p가 func를 가르키도록 func_p를 초기화.
+func_p(); //함수 포인터로 func함수 호출. 원래는 (*func_p)();임.
+
+
+int sum(int x1, int x2) {
+	return x1 + x2;
+}
+int mul(int x1, int x2) {
+	return x1, x2;
+}
+
+void calc(int(*summul)(int, int), int a, int b) //함수 calc에 매개변수로 함수포인터 summul 선언. 함수 포인터를 매개변수로 선언할 경우 (*)를 생략하여 int calc(int, int)로 선언 가능.
+{
+	printf("%d", (*summul)(a, b)); //(*summul)(a, b)는 summul(a, b)로 호출해도 됨.
+}
+
+
