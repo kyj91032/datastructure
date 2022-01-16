@@ -74,7 +74,7 @@ int mul(int x1, int x2) {
 	return x1, x2;
 }
 
-void calc(int(*summul)(int, int), int a, int b) //함수 calc에 매개변수로 함수포인터 summul 선언. 함수 포인터를 매개변수로 선언할 경우 (*)를 생략하여 int calc(int, int)로 선언 가능.
+void calc(int(*summul)(int, int), int a, int b) //함수 calc에 매개변수로 함수포인터 summul 선언. 함수 포인터를 매개변수로 선언할 경우 (*)를 생략하여 int summul(int, int)로 선언 가능.
 {
 	printf("%d", (*summul)(a, b)); //(*summul)(a, b)는 summul(a, b)로 호출해도 됨.
 }
