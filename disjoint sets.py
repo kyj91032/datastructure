@@ -29,9 +29,23 @@ def union_parent(parent, a, b): # 두 원소가 속한 집합을 합치는 union
   else:
     parent[a] = b
 
-for i in range(e): # union 연산 입력대로 수행
+for i in range(e): # union 연산(= 간선 정보) 입력대로 수행
   a, b = map(int, input().split())
   union parent(parent, a, b)
 
 for i in range(1, v + 1):
   print(find_parent(parent, i), end = ' ') # 각 원소가 속한 집합(루트 노드)를 출력
+
+  
+# 서로소 집합을 이용한 무방향 그래프에서의 사이클 판별 알고리즘: 간선을 확인하며 두 노드가 포함되어 있는 집합을 합치는 과정을 반복하면 사이클을 판별할 수 있다.
+
+cycle = False # 사이클 발생 여부
+
+for i in range(e):
+  a, b = map(int input().split()) # 간선 정보 a, b
+  if find_parent(parent, a) == find_parent(parent, b): # 입력받은 간선 (a, b)에서 각각의 원소의 루트 노드가 같다면, 사이클이 존재
+    cycle = True
+    break
+  else:
+    union_parent(parent, a, b) # ?? 걍 다 추가해놓고 하면 되는거 아닌가..
+
