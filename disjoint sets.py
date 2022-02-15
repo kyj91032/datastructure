@@ -8,7 +8,6 @@ parent = [0] * (v + 1) # 부모 테이블
 for i in range(1, v + 1): # 모든 노드(원소)의 부모를 자기 자신으로 초기화.
   parent[i] = i
 
-
 def find_parent(parent, x): # 특정 원소 x 가 속한 집합을 찾는 find 함수.
   if parent[x] != x:
     return find_parent(parent, parent[x]) # 재귀호출로 부모 노드를 거슬러서 x가 가르키는 루트만 딱 리턴함
@@ -19,7 +18,6 @@ def find_parent(parent, x):
   if parent[x] != x:
     parent[x] = find_parent(parent, parent[x]) # 재귀호출로 부모 노드를 거스르는 과정에서 부모 테이블을 루트 테이블로 갱신하고 루트를 리턴함.
   return parent[x]
-
 
 def union_parent(parent, a, b): # 두 원소가 속한 집합을 합치는 union 함수.
   a = find_parent(parent, a) # 원소 a의 루트
