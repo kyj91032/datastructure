@@ -6,6 +6,8 @@
 2. 스택 공간의 끝에서 push와 pop이 이뤄지도록 한다.
 '''
 
+# stack 코드
+
 ''' python
 
 stack = [] #스택 공간
