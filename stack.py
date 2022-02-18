@@ -1,4 +1,12 @@
-/* 파이썬에서 stack
+# 스택 자료구조: 한 쪽 끝에서만 자료를 넣고 뺄 수 있는 선형 구조로 되어 있어 선입후출의 구조를 가지는 자료구조이다.
+
+# 스택의 기본 동작 과정
+'''
+1. 스택 공간을 정의한다.
+2. 스택 공간의 끝에서 push와 pop이 이뤄지도록 한다.
+'''
+
+''' python
 
 stack = [] #스택 공간
 
@@ -15,19 +23,17 @@ stack.pop()
 
 print(stack[::-1]) # 최상단 데이터부터 출력.
 print(stack) # 최하단 데이터부터 출력.
+'''
 
-*/
+''' C
 
 #include <stdio.h>
 #include <stdlib.h>
 
 typedef struct {
 	int max; //스택의 용량
-	int *stk; //스택 배열(동적 메모리)
-	//불변
-	
+	int *stk; //스택 배열(동적 메모리)	
 	int ptr; //스택 커서 (요소를 추가하고 진행시켜 놓는, 진행시키고 요소를 삭제하는), 현재 요소의 개수
-	//가변
 } intstack;
 
 int initialize(intstack *s, int max) //스택 초기화
@@ -113,3 +119,4 @@ void terminate(intstack *s) //스택 완전 종료 (메모리 반납)
     free(s->stk);
   s->max = s->ptr = 0;
 }
+'''
